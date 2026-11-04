@@ -9,7 +9,7 @@ body { background:#FF7F2E; font-family:"Concert One",cursive; margin:0; padding:
 
 .container { left:50%; position:absolute; top:50%; transform:translate(-50%,-50%); height:300px; width:500px; }
 .container:after { position:absolute; content:""; background-color:rgba(19,36,44,.1); border-radius:12px; bottom:40px; height:12px; left:80px; width:350px; z-index:-1; }
-@media (max-width:540px) { .container { transform:translate(-50%,-50%) scale(.62); } .message { font-size:1.5rem; } .message.win { font-size:2.8rem; } }
+@media (max-width:540px) { .container { transform:translate(-50%,-50%) scale(.5); } .message { font-size:1.5rem; } .message.win { font-size:2.8rem; } }
 
 /* caveman */
 .caveman { height:300px; position:absolute; width:250px; }
@@ -76,3 +76,9 @@ body { background:#FF7F2E; font-family:"Concert One",cursive; margin:0; padding:
 
 .message { transition:opacity .5s; }
 .message.hidden { opacity:0; }
+
+/* right character falls backwards onto the ground (design untouched) */
+.health,.health-label { transition:opacity .3s; }
+.target.fallen { transform-origin:195px 255px; animation:fall .9s ease-in forwards; }
+.target.fallen .health,.target.fallen .health-label { opacity:0; }
+@keyframes fall { 0% { transform:rotate(0); } 12% { transform:rotate(-5deg); } 70% { transform:rotate(92deg); } 85% { transform:rotate(86deg); } 100% { transform:rotate(90deg); } }
