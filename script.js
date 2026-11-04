@@ -42,7 +42,8 @@
         message.textContent = 'You win! 🎉';
         message.classList.remove('hidden');
         message.classList.add('win');
-        restart.hidden = false;
+        target.classList.add('fallen');
+        setTimeout(() => { restart.hidden = false; }, 1100);
       }
     }, IMPACT_MS);
 
@@ -59,6 +60,7 @@
     message.textContent = '';
     message.classList.remove('win');
     restart.hidden = true;
+    target.classList.remove('fallen');
   }
 
   hitter.addEventListener('pointerdown', swing);
