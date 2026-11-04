@@ -14,6 +14,9 @@
 
   let hits = 0, busy = false, over = false;
 
+  // show the hint for 3 seconds, then fade it out
+  setTimeout(() => { if (!over) message.classList.add('hidden'); }, 3000);
+
   function updateHealth() {
     const pct = ((MAX_HITS - hits) / MAX_HITS) * 100;
     fill.style.width = pct + '%';
@@ -37,6 +40,7 @@
       if (hits >= MAX_HITS) {
         over = true;
         message.textContent = 'You win! 🎉';
+        message.classList.remove('hidden');
         message.classList.add('win');
         restart.hidden = false;
       }
@@ -52,7 +56,7 @@
   function reset() {
     hits = 0; over = false;
     updateHealth();
-    message.textContent = 'Tap the left caveman to hit!';
+    message.textContent = '';
     message.classList.remove('win');
     restart.hidden = true;
   }
