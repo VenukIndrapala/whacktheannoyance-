@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Caveman Fight</title>
+  <!-- Original artwork credit: "SofiaSergio" https://codepen.io/SofiaSergio/ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 id="message" class="message" aria-live="polite">Tap the left caveman to hit!</h1>
+
+  <div class="container">
+    <!-- Target: right side, stays still -->
+    <div class="caveman target" id="target">
+      <div class="leg"><div class="foot"><div class="fingers"></div></div></div>
+      <div class="leg"><div class="foot"><div class="fingers"></div></div></div>
+      <div class="shape"><div class="circle"></div><div class="circle"></div></div>
+      <div class="head"><div class="eye"><div class="nose"></div></div></div>
+      <div class="arm-right"><div class="club"></div></div>
+      <div class="health" role="progressbar" aria-valuemin="0" aria-valuemax="15" aria-valuenow="15">
+        <div class="health-fill" id="healthFill"></div>
+      </div>
+    </div>
+
+    <!-- Hitter: left side, hits only when tapped -->
+    <div class="caveman hitter" id="hitter">
+      <div class="leg"><div class="foot"><div class="fingers"></div></div></div>
+      <div class="leg"><div class="foot"><div class="fingers"></div></div></div>
+      <div class="shape"><div class="circle"></div><div class="circle"></div></div>
+      <div class="head"><div class="eye"><div class="nose"></div></div></div>
+      <div class="arm-right"><div class="club"></div></div>
+    </div>
+  </div>
+
+  <button id="restart" class="restart" hidden>Play again</button>
+
+  <a id="link" href="https://codepen.io/SofiaSergio/" target="_blank" rel="noopener">
+    <p>Artwork by SofiaSergio</p>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
